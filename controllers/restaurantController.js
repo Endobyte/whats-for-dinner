@@ -3,7 +3,12 @@ const categories = ['American', 'Italian', 'Chinese', 'Japanese', 'Mexican'];
 
 module.exports.viewAll = async function(req, res) {
     const restaurants = await Restaurant.findAll();
-    res.render('index', {restaurants});
+    let searchCategory = 'All';
+    let searchCategories = ['All'];
+    for (let i = 0; i < categories.length; i++) {
+        searchCategories.push(categories[i]);
+    }
+    res.render('index', {restaurants, categories:searchCategories, searchCategory});
 }
 
 module.exports.renderEditForm = async function(req, res) {

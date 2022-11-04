@@ -6,10 +6,21 @@ body {
 }
 
 .container {
-  padding: 48px;
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+}
+
+.container.one {
+  padding: 48px 48px 0 48px;
+}
+
+.container.two {
+  padding: 24px 48px 24px 48px;
+}
+
+.container.three {
+  padding: 0 48px 48px 48px;
 }
 
 .card {
@@ -93,9 +104,9 @@ body {
   border-radius: 6px;
   padding: 8px 16px;
   text-decoration: none;
-  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px;
+  box-shadow: rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0.5) 0 1px 2px 0;
   font-size: 14px;
-  line-height: 2.5rem;
+  line-height: 1.25rem;
 }
 
 .button.save {
@@ -113,12 +124,12 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+  background-color: #191e27;
+  border-bottom: 5px solid #164e63;
 }
 
 .main-header img {
   width: 20%;
-  margin: 10px;
-  box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.5);
 }
 
 .button-row {
@@ -128,4 +139,59 @@ body {
   border-top: 1px solid #e5e7eb;
   padding-top: 20px;
 }
-/*Keep adding CSS from messages, fix image (add banner?)*/
+
+.form-panel {
+  margin-top: 3rem;
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0.1) 0 1px 3px 0;
+  overflow: hidden;
+  padding: 32px 48px;
+  color: #111827;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-input {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.form-input.special {
+  margin-bottom: 10px;
+}
+
+.form-input label {
+  font-size: 0.875rem;
+  color: #374151;
+  line-height: 1.25rem;
+  font-weight: bold;
+}
+
+.form-input label, .form-input input {
+  display: block;
+}
+
+.form-input label, .form-input textarea, .form-input select {
+  margin-bottom: 4px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  box-shadow: rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0.05) 0 1px 2px 0;
+  line-height: 20px;
+  background: white;
+}
+
+.form-panel .header {
+  font-size: 18px;
+  line-height: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.larger-check {
+  height: 20px;
+  width: 20px;
+}

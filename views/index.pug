@@ -2,17 +2,20 @@ extends layout
 
 block content
   include mixins/restaurantCard
-  div.container
+  div.container.one
     form(action='/' method='get')
-      div.form-input
+      div.form-input.special
         label(for='category') Category
         select(id='category' name='category' autocomplete='off')
           each category in categories
             option(value=category selected = (category === searchCategory)) #{category}
-      button.button.save(type='submit') Filter
-  div.container
+      div.form-input
+        label(for='random') Random?
+        input.larger-check(type='checkbox' name='random' id='random' checked=searchRandom)
+      button.button.save(type='submit') Press to Filter
+  div.container.two
     div.add-button-row
       a.button.save(href="/add") Add Restaurant
-  div.container
+  div.container.three
     each restaurant in restaurants
       +restaurantCard(restaurant)
